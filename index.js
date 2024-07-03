@@ -19,7 +19,7 @@ app.post("/tallyhook", async (req, res) =>{
 
     }
     catch(err){
-        console.log(error)
+        console.log(err)
         res.status(500).send("error storing data")
     }
 })
