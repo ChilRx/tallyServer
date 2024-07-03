@@ -4,8 +4,11 @@ import admin from 'firebase-admin'
 import { getDatabase, ref,set } from "firebase/database";
 
 import { readFileSync } from 'fs';
+import dotenv from 'dotenv';
 
-const serviceAccount = JSON.parse(readFileSync('./sfhacks2025-firebase-adminsdk-7t9f7-138858689d.json', 'utf8'));
+dotenv.config()
+const key = process.env.ADMIN_INFO
+const serviceAccount = JSON.parse(Buffer.from(key,'base64').toString('utf-8'))
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -24,6 +27,7 @@ const write = (s, id)=>{
 
 
 }
+
 
 
 
