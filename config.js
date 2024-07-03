@@ -24,7 +24,7 @@ const write = (s, id)=>{
 
 
 }
-write("Testing" , 12345667)
+
 
 
 

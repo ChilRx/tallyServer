@@ -1,5 +1,5 @@
 import express from 'express'
-import { database } from './config'
+import { database } from './config.js'
 import {set,ref} from 'firebase/database'
     
 
