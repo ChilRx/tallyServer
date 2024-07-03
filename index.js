@@ -1,6 +1,6 @@
 import express from 'express'
 import { database } from './config.js'
-import {set,ref,push} from 'firebase/database'
+import {set,ref,push, update,child} from 'firebase/database'
     
 
 const app = new express()
