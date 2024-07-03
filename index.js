@@ -22,11 +22,11 @@ app.listen(3000, () => {
 });
 
 function simplify(tallyContent) {
-  const tallyFormfields = tallyContent.data.fields;
+  const tallyFormEntries = tallyContent.data.fields;
   const output = {};
 
-  tallyFormfields.forEach((fieldKey) => {
-    output[fieldKey.key] = fieldKey.value;
+  tallyFormEntries.forEach((entry) => {
+    output[entry.key] = entry.value;
   });
 
   return output;
