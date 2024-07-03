@@ -1,6 +1,6 @@
 import express from 'express'
 import { database } from './config.js'
-import {set,ref} from 'firebase/database'
+import {set,ref,push} from 'firebase/database'
     
 
 const app = new express()
@@ -11,7 +11,9 @@ app.use(express.json())
 app.post("/tallyhook", async (req, res) =>{
     try{
        let content = req.body
-       await set(ref(database,"responses/"), {
+       let responseKey = push(child(ref(database),'respones')).key
+
+       await set(ref(database,"responses/" + responseKey), {
         content
        })
 
