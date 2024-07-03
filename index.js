@@ -11,7 +11,7 @@ app.use(express.json())
 app.post("/tallyhook", async (req, res) =>{
     try{
        let content = req.body
-       await database.set(ref("/responses"), {
+       await set(ref(database,"/responses"), {
         content
        })
 
